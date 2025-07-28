@@ -28,7 +28,7 @@ export default function ProductCard({ product }) {
 
         <p className="text-lg font-medium text-gray-700">{formatPrice(product.minPrice, product.maxPrice)}</p>
 
-        <button className="w-1/2 py-2 bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold rounded-full">
+        <button className="w-1/2 py-2  bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold rounded-full">
           Shop Now
         </button>
       </div>

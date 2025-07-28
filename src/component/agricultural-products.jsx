@@ -1,6 +1,9 @@
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import ProductCard from "./product-card"
-import img1 from "../../public/image/Group 507.png"
+import img1 from "../../public/image/agri1.png"
+import img2 from "../../public/image/agri2.png"
+import img3 from "../../public/image/agri3.png"
+import img4 from "../../public/image/agri4.png"
 
 
 export default function AgriculturalProducts() {
@@ -15,21 +18,21 @@ export default function AgriculturalProducts() {
     {
       id: 2,
       title: "FGC RustFree Fencing",
-      image: img1,
+      image: img2,
       minPrice: 499,
       maxPrice: 1589,
     },
     {
       id: 3,
       title: "GI Poultry Mesh",
-      image: img1,
+      image: img3,
       minPrice: 1260,
       maxPrice: 10750,
     },
     {
       id: 4,
       title: "JF Bluelink Mesh",
-      image: img1,
+      image: img4,
       minPrice: 3067.5,
       maxPrice: 6362.5,
     },

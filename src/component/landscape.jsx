@@ -1,119 +1,84 @@
-import Navbar from "@/components/navbar"
-import LandscapeProducts from "@/components/landscape-products"
-import Footer from "@/components/footer"
+"use client"
 
-export default function LandscapePage() {
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import img1 from "../../public/image/image.png"
+import img2 from "../../public/image/image (1).png"
+import img3 from "../../public/image/image (2).png"
+import img4 from "../../public/image/image (3).png"
+
+export default function Component() {
+  const products = [
+    {
+      id: 1,
+      name: "Antigo Fence",
+      image: img1,
+      priceRange: "₹10,024.00 – ₹14,984.82",
+    },
+    {
+      id: 2,
+      name: "JF Australian Trellis",
+      image: img2,
+      price: "₹6,962.00",
+    },
+    {
+      id: 3,
+      name: "JF Polyhex Mesh",
+      image: img3,
+      priceRange: "₹4,050.00 – ₹10,770.00",
+    },
+    {
+      id: 4,
+      name: "JF Privezy Grass Wall",
+      image: img4,
+      priceRange: "₹1,646.10 – ₹18,284.10",
+    },
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
+    <section className="bg-gray-50 py-12">
+        <div className="w-full  max-w-7xl mx-auto">
+      <h2 className="text-3xl font-bold text-gray-900 mb-8 ml-8">Landscape Products</h2>
 
-      {/* Page Header */}
-      <div className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Transform Your Landscape</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover our premium collection of landscape products designed to enhance your outdoor spaces with style and
-            functionality.
-          </p>
-        </div>
-      </div>
+      <div className="relative">
+        {/* Left Arrow */}
+        <button className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
+          <ChevronLeft className="w-5 h-5 text-gray-600" />
+        </button>
 
-      {/* Landscape Products Section */}
-      <LandscapeProducts />
+        {/* Right Arrow */}
+        <button className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
+          <ChevronRight className="w-5 h-5 text-gray-600" />
+        </button>
 
-      {/* Additional Content Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Our Landscape Products?</h2>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-gray-800 text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Premium Quality Materials</h3>
-                    <p className="text-gray-600">Durable, weather-resistant products built to last</p>
-                  </div>
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-12">
+          {products.map((product) => (
+            <div key={product.id} className="bg-gray-50 border-0 rounded-2xl overflow-hidden shadow-sm">
+              <div className="p-4">
+                <div className="aspect-[4/3] mb-4 rounded-xl overflow-hidden bg-white">
+                  <Image
+                    src={product.image || "/placeholder.svg"}
+                    alt={product.name}
+                    width={300}
+                    height={200}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-gray-800 text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Easy Installation</h3>
-                    <p className="text-gray-600">Simple setup process with detailed instructions</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-gray-800 text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Competitive Pricing</h3>
-                    <p className="text-gray-600">Best value for money with flexible pricing options</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-lime-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-gray-800 text-sm font-bold">✓</span>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Expert Support</h3>
-                    <p className="text-gray-600">Professional guidance and customer service</p>
-                  </div>
-                </div>
+
+                <h3 className="font-semibold text-gray-900 text-lg mb-2">{product.name}</h3>
+
+                <p className="text-gray-600 text-sm mb-4">{product.priceRange || product.price}</p>
+
+                <button className="w-1/2 bg-lime-400 hover:bg-lime-500 text-black font-medium rounded-full py-2 px-6 transition-colors">
+                  Shop Now
+                </button>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-8 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Get a Quote</h3>
-              <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                  <input
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-400"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                  <input
-                    type="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-400"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                  <input
-                    type="tel"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-400"
-                    placeholder="Enter your phone"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Project Details</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-lime-400"
-                    placeholder="Tell us about your project"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-lime-400 hover:bg-lime-500 text-gray-900 font-semibold py-3 rounded-full transition-colors"
-                >
-                  Get Quote
-                </button>
-              </form>
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
-
-      <Footer />
+      </div>
     </div>
+    </section>
   )
 }

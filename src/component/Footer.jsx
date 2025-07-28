@@ -4,9 +4,10 @@ import logo from "../../public/image/Group 395.png";
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="bg-[#212516] text-white">
+    <section className="bg-gray-50">
+        <footer className="bg-blue-900 text-white">
       {/* Main Footer Content */}
-      <div className="rounded-t-3xl bg-slate-800 px-8 py-12">
+      <div className="rounded-t-3xl bg-blue-900 px-8 py-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 justify-between gap-8">
             {/* Newsletter Section */}
@@ -149,5 +150,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </section>
   )
 }
