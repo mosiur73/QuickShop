@@ -1,4 +1,6 @@
-import { Search, ShoppingCart, User } from "lucide-react"
+import { Search, ShoppingCart, User } from "lucide-react";
+import Image from "next/image";
+import logo from "../../public/image/Group 395.png";
 
 export default function Navbar() {
   return (
@@ -22,15 +24,9 @@ export default function Navbar() {
           </nav>
 
           {/* Logo */}
-          {/* <div className="flex-shrink-0">
-            <div className="w-16 h-16 rounded-full border-2 border-blue-600 flex items-center justify-center bg-white">
-              <div className="text-center">
-                <div className="text-xs text-gray-600 leading-none">ARTIFICIAL</div>
-                <div className="text-2xl font-bold text-blue-600">JF</div>
-                <div className="text-xs text-gray-600 leading-none">GRASS WALL</div>
-              </div>
-            </div>
-          </div> */}
+          <div className="flex-shrink-0">
+            <Image src={logo} alt="Logo" width={70} height={40} className="mt-3" />
+          </div>
 
           {/* Right side actions */}
           <div className="flex items-center space-x-6">
@@ -51,5 +47,5 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
