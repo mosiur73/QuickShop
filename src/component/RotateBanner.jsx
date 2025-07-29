@@ -3,7 +3,7 @@ import { Building2 } from "lucide-react"
 export default function CrookedBanner() {
   return (
    <section className="bg-gray-50">
-     <div className="w-full py-8 overflow-hidden">
+     <div className="w-full py-8 overflow-hidden ">
       {/* Crooked Banner Container */}
       <div className="relative transform -rotate-1 w-full h-20 bg-gradient-to-r from-white via-blue-50 to-blue-100 shadow-sm">
         {/* Wavy Background Shape */}
@@ -15,7 +15,7 @@ export default function CrookedBanner() {
         </div>
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center justify-center">
+        <div className="relative z-10 h-full flex items-center justify-center border border-black">
           <div className="flex items-center space-x-16">
             {/* Quality Product */}
             <div className="flex items-center space-x-3">
